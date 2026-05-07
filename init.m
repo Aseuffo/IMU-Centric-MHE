@@ -1,3 +1,5 @@
+close all 
+% clc
 finish_sound = onCleanup(@() beep);
 
 %% Source
@@ -11,19 +13,14 @@ Ts = 0.01;         % [s] sample time
 createSlkBus
 
 %% Select and Initialize the Vehicle
-vehicle_type = "corvette"; % superformula, indylight, ferrari, corvette
+vehicle_type = "corvette"; %  ferrari, corvette
 vehicle = initVehicle(vehicle_type);
-
-%% Initialiaze Kalman Filter 
-run('initKalman.m');
 
 %%  Choose log based on car 
 % Default log per ca
 logByCar = struct( ...
-    "superformula", "20251016_yas_north_run01_q1_raw", ...
     "ferrari",      "20140222_02_01_03", ...
-    "corvette",     "20130223_01_01_03_grandsport", ...
-    "indylight",    "20250607_marzaglia_run03" ...
+    "corvette",     "20130223_01_01_03_grandsport" ...
 );
 
 % Use default for that car
@@ -40,4 +37,6 @@ logFolder = fullfile("log", vehicle_type, logFolderName);
 sim = false;
 log = loadDataWithPrompt(logFolder, vehicle_type, vehicle, sim, Ts, 'AutoReuseIfSame', false);
 
-load gong; sound(y, Fs);
+
+%% Run MHE 
+workspaceData = runMHEExperiment(vehicle,log);

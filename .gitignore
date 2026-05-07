@@ -1,37 +1,40 @@
-slprj/*
-*/slprj/*
-log/*
-*/log/*
-filters/bicycleFcn/*
-old/*
-bag/*
-*.autosave
-*.original
-*.slxc
-*.mat
-*.asv
-*.zip
-*.png
-*.fig
-# Casadi
-casadi-*/
-# MATLAB autosave files
-*.asv
-*.m~
-*.autosave
-
-# MATLAB generated files
+# Simulink generated files
 slprj/
+*/slprj/
+log/
+*/log/
+
+# Generated code / cache
 *.slxc
 *.slx.bak
 *.mdl.bak
 
-# MATLAB cache and logs
+# MATLAB autosave / temp
+*.asv
+*.m~
+*.autosave
+*.original
+
+# MATLAB binaries
 *.mex*
+
+# Data / outputs
+*.mat
+*.fig
+*.png
+*.zip
+bag/
+old/
+
+# Custom generated folders
+filters/bicycleFcn/
+
+# CasADi
+casadi-*/
+
+# Logs
 *.log
 
 # OS files
 .DS_Store
 Thumbs.db
-
-
