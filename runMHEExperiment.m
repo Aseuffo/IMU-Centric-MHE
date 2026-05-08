@@ -1,5 +1,4 @@
 function workspaceData = runMHEExperiment(vehicle,log)
-    addpath('./casadi-3.7.2-linux64-matlab2018b')
     import casadi.*
     %% Hyper-params
     Ts     = 0.05;     % [s]
@@ -28,23 +27,7 @@ function workspaceData = runMHEExperiment(vehicle,log)
     
     %% Load measured data
     
-    loadOpts = struct();
-    
-    loadOpts.lapStart = 2;
-    loadOpts.numLaps  = 1;
-    
-    % Use full laps:
-    loadOpts.endPlus = [];
-    
-    % Or use fixed number of samples:
-    % loadOpts.endPlus = 2000;
-    
-    loadOpts.startOffset = 0;
-    loadOpts.endOffset = 0;
-    
-    loadOpts.threshold = 50;
-    loadOpts.doPlot = true;
-
+    loadOpts = loadDataSegmentConfig(configFile);
 
     lapCfg = loadLapDetectionConfig(configFile);
     loadOpts.lap_detection = lapCfg;

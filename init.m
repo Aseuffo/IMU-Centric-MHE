@@ -13,7 +13,7 @@ Ts = 0.01;         % [s] sample time
 createSlkBus
 
 %% Select and Initialize the Vehicle
-vehicle_type = "corvette"; %  ferrari, corvette
+vehicle_type = "ferrari"; %  ferrari, corvette
 vehicle = initVehicle(vehicle_type);
 
 %%  Choose log based on car 
