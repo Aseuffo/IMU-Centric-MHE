@@ -496,7 +496,8 @@ function workspaceData = runMHEExperiment(vehicle,log)
     end
     
     nlp_mhe = struct('f', obj, 'x', OPT_variables, 'g', g, 'p', p);
-    
+
+    %% Solver 
     opts = loadSolverOptions(configFile);
     solver = nlpsol('solver', 'ipopt', nlp_mhe, opts);
     
@@ -708,19 +709,15 @@ function workspaceData = runMHEExperiment(vehicle,log)
     fprintf('\nSaved post-processing data in:\n%s\n', saveFile);
     
     %% Plot
-    opts = struct();
-    
-    opts.plotSlack   = false;
-    opts.plotForces  = false;
-    opts.saveFigures = false;
-    opts.saveFolder  = './resultsFigure';
+
+    plotOpts = loadPlotOptions(configFile);
     
     funcs = struct();
     funcs.loads     = loads;
     funcs.slips     = slips;
     funcs.latForces = latForces;
     
-    plotMHEResults('./resultsData/mhe_postprocessing_data.mat', opts, funcs);
+    plotMHEResults(plotOpts.dataFile, plotOpts, funcs);
     
     workspaceData = struct();
 

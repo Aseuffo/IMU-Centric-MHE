@@ -73,7 +73,7 @@
 
     "case_overrides": {
       "AyStateOnly": {
-        "vy": [-2.0, 2.0]
+        "vy": [-5.0, 5.0]
       }
     },
 
@@ -141,11 +141,18 @@
   "lapStart": 1,
   "numLaps": 1,
 
-  "endPlus": 2000,
+  "endPlus": null,
 
   "startOffset": 0,
   "endOffset": 0,
 
   "doPlot": true
+  },
+"plot": {
+  "plotSlack": false,
+  "plotForces": true,
+  "saveFigures": false,
+  "saveFolder": "./resultsFigure",
+  "dataFile": "./resultsData/mhe_postprocessing_data.mat"
 }
 }
