@@ -1,4 +1,36 @@
 {
+  "flags": {
+    "optimised_input": true,
+
+    "split_forces": false,
+
+    "ay_in_state": true,
+    "ay_drives_vy": false,
+    "ay_in_cost": false,
+
+    "D_in_states": false,
+    "use_Dsum_lam": false,
+    "DsumLam_as_params": false
+  },
+
+  "data_segment": {
+    "lapStart": 1,
+    "numLaps": 1,
+
+    "endPlus": null,
+
+    "startOffset": 0,
+    "endOffset": 0,
+
+    "doPlot": true
+  },
+
+  "lap_detection": {
+    "threshold": 10.0,
+    "min_gap_time": 2.0,
+    "ignore_initial_inside_zone": true
+  },
+
   "common": {
     "constraint_std": [1.4e-3, 4.5e-1],
 
@@ -91,68 +123,42 @@
       "force_split": [10.0, 10.0]
     }
   },
-"flags": {
-  "optimised_input": true,
 
-  "split_forces": false,
+  "initial_guess": {
+    "vy": 0.0,
 
-  "ay_in_state": true,
-  "ay_drives_vy": false,
-  "ay_in_cost": false,
+    "Df_param": 1.2,
+    "Dr_param": 1.2,
 
-  "D_in_states": false,
-  "use_Dsum_lam": false,
-  "DsumLam_as_params": false
-    },
-"solver": {
-  "print_time": 0,
+    "Df_state": 1.5,
+    "Dr_state": 1.5,
 
-  "ipopt": {
-    "max_iter": 200,
-    "print_level": 0,
-    "acceptable_tol": 1.0e-6,
-    "acceptable_obj_change_tol": 1.0e-6,
-    "mu_init": 1.0e-3,
-    "warm_start_init_point": "yes",
-    "mu_strategy": "adaptive"
+    "Dsum_state": 3.0,
+    "lambda_state": 0.5,
+
+    "Dsum_param": 3.0,
+    "lambda_param": 0.5
+  },
+
+  "solver": {
+    "print_time": 0,
+
+    "ipopt": {
+      "max_iter": 200,
+      "print_level": 0,
+      "acceptable_tol": 1.0e-6,
+      "acceptable_obj_change_tol": 1.0e-6,
+      "mu_init": 1.0e-3,
+      "warm_start_init_point": "yes",
+      "mu_strategy": "adaptive"
     }
   },
-"initial_guess": {
-  "vy": 0.0,
 
-  "Df_param": 1.2,
-  "Dr_param": 1.2,
-
-  "Df_state": 1.5,
-  "Dr_state": 1.5,
-
-  "Dsum_state": 3.0,
-  "lambda_state": 0.5,
-
-  "Dsum_param": 3.0,
-  "lambda_param": 0.5
-   }, 
-"lap_detection": {
-  "threshold": 10.0,
-  "min_gap_time": 2.0,
-  "ignore_initial_inside_zone": true
-   },
-"data_segment": {
-  "lapStart": 1,
-  "numLaps": 1,
-
-  "endPlus": null,
-
-  "startOffset": 0,
-  "endOffset": 0,
-
-  "doPlot": true
-  },
-"plot": {
-  "plotSlack": false,
-  "plotForces": true,
-  "saveFigures": false,
-  "saveFolder": "./resultsFigure",
-  "dataFile": "./resultsData/mhe_postprocessing_data.mat"
-}
+  "plot": {
+    "plotSlack": false,
+    "plotForces": true,
+    "saveFigures": false,
+    "saveFolder": "./resultsFigure",
+    "dataFile": "./resultsData/mhe_postprocessing_data.mat"
+  }
 }
