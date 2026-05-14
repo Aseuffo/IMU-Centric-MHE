@@ -6,9 +6,6 @@ finish_sound = onCleanup(@() beep);
 addpath(genpath("fcns"));
 addpath("vehicles/");
 
-%% Initialize model parameters
-Ts = 0.01;         % [s] sample time
-
 %% Create Bus Data Type
 createSlkBus
 
@@ -20,7 +17,7 @@ vehicle = initVehicle(vehicle_type);
 % Default log per ca
 logByCar = struct( ...
     "ferrari",      "20140222_02_01_03", ...
-    "corvette",     "20130223_01_01_03_grandsport" ...
+    "corvette",     "20130223_01_02_03_grandsport" ...
 );
 
 % Use default for that car
@@ -35,7 +32,7 @@ logFolder = fullfile("log", vehicle_type, logFolderName);
 
 %% Load Data
 sim = false;
-log = loadDataWithPrompt(logFolder, vehicle_type, vehicle, sim, Ts, 'AutoReuseIfSame', false);
+log = loadDataWithPrompt(logFolder, vehicle_type, vehicle, sim, 0.01, 'AutoReuseIfSame', false);
 
 
 %% Run MHE 

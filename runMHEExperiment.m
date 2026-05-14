@@ -2,7 +2,7 @@ function workspaceData = runMHEExperiment(vehicle,log)
     import casadi.*
     %% Hyper-params
     Ts     = 0.05;     % [s]
-    period = 0.1;      % [s]
+    period = 0.5;      % [s]
     N_MHE  = round(period/Ts);   % horizon length (stages)
     
     %% Config path  

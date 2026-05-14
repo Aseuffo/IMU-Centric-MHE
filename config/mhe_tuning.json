@@ -14,7 +14,7 @@
   },
 
   "data_segment": {
-    "lapStart": 1,
+    "lapStart": 3,
     "numLaps": 1,
 
     "endPlus": null,
@@ -40,7 +40,7 @@
     "force_std_single": [3.2e-1],
     "force_std_split": [1.0e-1, 1.0e-1],
 
-    "parameter_prior_std": [1.0e-2, 1.0e-2],
+    "parameter_prior_std": [1.0e-1, 1.0e-2],
 
     "extra_slack_std": {
       "ay_consistency": 3.2,
@@ -88,7 +88,7 @@
 
   "bounds": {
     "variables": {
-      "vx": [0.1, 60.0],
+      "vx": [0.1, 70.0],
       "vy": [-5.0, 5.0],
       "r": [-1.0, 1.0],
       "delta": [-0.32, 0.32],
@@ -127,16 +127,16 @@
   "initial_guess": {
     "vy": 0.0,
 
-    "Df_param": 1.2,
-    "Dr_param": 1.2,
+    "Df_param": 1.1,
+    "Dr_param": 1.1,
 
-    "Df_state": 1.5,
-    "Dr_state": 1.5,
+    "Df_state": 1.1,
+    "Dr_state": 1.1,
 
-    "Dsum_state": 3.0,
+    "Dsum_state": 2.2,
     "lambda_state": 0.5,
 
-    "Dsum_param": 3.0,
+    "Dsum_param": 2.2,
     "lambda_param": 0.5
   },
 
