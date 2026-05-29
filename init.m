@@ -1,5 +1,5 @@
 close all 
-% clc
+clc
 finish_sound = onCleanup(@() beep);
 
 %% Source
@@ -36,4 +36,6 @@ log = loadDataWithPrompt(logFolder, vehicle_type, vehicle, sim, 0.01, 'AutoReuse
 
 
 %% Run MHE 
-workspaceData = runMHEExperiment(vehicle,log);
+Ts     = 0.05;     % [s]
+period = 0.5;      % [s]
+workspaceData = runMHEExperiment(vehicle,log,Ts,period);

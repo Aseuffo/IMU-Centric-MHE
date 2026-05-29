@@ -15,7 +15,7 @@
 
   "data_segment": {
     "lapStart": 3,
-    "numLaps": 1,
+    "numLaps": 3,
 
     "endPlus": null,
 
@@ -40,7 +40,7 @@
     "force_std_single": [3.2e-1],
     "force_std_split": [1.0e-1, 1.0e-1],
 
-    "parameter_prior_std": [1.0e-1, 1.0e-2],
+    "parameter_prior_std": [1.0e-1, 3e-2],
 
     "extra_slack_std": {
       "ay_consistency": 3.2,
@@ -96,10 +96,10 @@
 
       "ay": [-15.0, 15.0],
 
-      "Df": [1.0, 2.0],
-      "Dr": [1.0, 2.0],
+      "Df": [0.5, 2.0],
+      "Dr": [0.5, 2.0],
 
-      "Dsum": [2.0, 4.0],
+      "Dsum": [1, 4.0],
       "lambda": [0.05, 0.95]
     },
 
@@ -155,8 +155,8 @@
   },
 
   "plot": {
-    "plotSlack": false,
-    "plotForces": true,
+    "plotSlack": true,
+    "plotForces": false,
     "saveFigures": false,
     "saveFolder": "./resultsFigure",
     "dataFile": "./resultsData/mhe_postprocessing_data.mat"

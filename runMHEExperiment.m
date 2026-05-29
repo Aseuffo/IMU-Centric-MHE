@@ -1,9 +1,7 @@
-function workspaceData = runMHEExperiment(vehicle,log)
+function workspaceData = runMHEExperiment(vehicle,log,Ts,period)
     import casadi.*
-    %% Hyper-params
-    Ts     = 0.05;     % [s]
-    period = 0.5;      % [s]
-    N_MHE  = round(period/Ts);   % horizon length (stages)
+    %% horizon length (stages)
+    N_MHE  = round(period/Ts);   
     
     %% Config path  
     configFile = './config/mhe_tuning.json';
