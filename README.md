@@ -2,9 +2,7 @@
 
 This repository contains the MATLAB development workspace for the IMU-centric Moving Horizon Estimation (MHE) framework presented in our paper:
 
-IMU-Centric Moving Horizon Estimation of Lateral Dynamics Across Vehicles and Grip Conditions
-
-[Paper link to be added ...]
+IMU-Centric Moving Horizon Estimation of Lateral Dynamics Across Vehicles and Grip Conditions https://arxiv.org/abs/2609.10202
 
 The proposed estimator reconstructs vehicle lateral velocity and lateral acceleration using inertial measurements and available onboard signals. The framework also adapts the effective tire force capacity in order to account for variations in tire-road grip conditions.
 
@@ -180,11 +178,12 @@ Choose Overwrite if you changed the dataset or want to reload the data from disk
 
 If you use this repository in your research, please cite our paper:
 
-@article{your_citation_key,
+@article{ngoune2026imu,
   title   = {IMU-Centric Moving Horizon Estimation of Lateral Dynamics Across Vehicles and Grip Conditions},
-  author  = {Seuffo Akouan'ha Ngoune, Alessandro Toschi, Paolo Burgio, Marko Bertogna},
-  journal = {},
-  year    = {}
+  author  = {Seuffo Akouan'ha Ngoune and Alessandro Toschi and Paolo Burgio and Marko Bertogna},
+  journal = {arXiv preprint arXiv:2609.10202 },
+  year    = {2026},
+  note    = {Accepted at IEEE ITSC 2026}
 }
 
 
